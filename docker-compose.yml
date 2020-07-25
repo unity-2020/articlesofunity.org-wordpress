@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress:5.4
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin
+      WORDPRESS_DB_NAME: unity2020
+    volumes:
+      - $PWD:/var/www/html
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: unity2020
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  mysql:
