@@ -6757,3 +6757,34 @@ body:not(.overlay-header) #site-header .primary-menu ul,
     font-size: 1.8rem;
     border: none;
 }
+
+.post-573 {
+	text-align: center;
+}
+
+.post-573 a {
+	color: #ff8253;
+}
+
+.post-573 h1,
+.post-573 h2,
+.post-573 h3,
+.post-573 h4,
+.post-573 h5,
+.post-573 h6 {
+	text-transform: uppercase;
+}
+
+.post-573 .qna-intro {
+	margin: 12rem auto 6rem;
+}
+
+.post-573 .qna {
+	padding-bottom: 3rem;
+	margin-bottom: 3rem;
+	border-bottom: 2px solid #000;
+}
+
+.post-573 .qna h3 {
+	margin-top: 0;
+}
