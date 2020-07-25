@@ -1,0 +1,26 @@
+{
+  "watch": "**/**.{html,css}",
+  "reload": "**/**.html",
+  "mount": [
+    {
+      "path": "components",
+      "target": "/"
+    }
+  ],
+  "port": 8008,
+  "listDirectory": false,
+  "inject": [
+    {
+      "content": "head.html.part",
+      "which": "**/components/*.html",
+      "where": "^",
+      "prepend": true
+    },
+    {
+      "content": "footer.html.part",
+      "which": "**/components/*.html",
+      "where": "$",
+      "prepend": false
+    }
+  ]
+}

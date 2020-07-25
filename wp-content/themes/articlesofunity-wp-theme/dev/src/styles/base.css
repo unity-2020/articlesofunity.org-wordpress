@@ -1,0 +1,5 @@
+/* Importing nested for isolation */
+
+.tw-reset {
+  @tailwind base;
+}

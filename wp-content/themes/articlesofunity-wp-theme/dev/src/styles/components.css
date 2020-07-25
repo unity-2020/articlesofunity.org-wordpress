@@ -1,0 +1,7 @@
+/* Importing both nested and un-nested for specificity: we want to be able to use simple tailwind classes anywhere, and we need them to still work inside .ts-reset */
+
+.ts-reset {
+  @tailwind components;
+}
+
+@tailwind components;

@@ -1,0 +1,54 @@
+# MacOS system files
+*.DS_Store
+Icon
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Node
+node_modules
+
+# Build Folders
+web/assets/
+.tmp
+
+# Misc
+app.yaml
+
+# Vagrant
+.vagrant
+Vagrantfile
+install.sh
+
+# Composer
+vendor/
+
+# Craft Storage
+storage
+
+# Misc
+web/cpresources/**/*
+*.box
+*.log
+*.sql
+.env
+
+# Apache
+.htaccess
+
+# License
+license.key
+
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+output.json
+
+# dist
+web/dist

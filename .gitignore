@@ -21,3 +21,5 @@ wp-content/themes/*
 
 # Finally, we will whitelist the exact directories we want. Then each specific
 # theme or plugin should maintain its own internal .gitignore file
+
+!wp-content/themes/articlesofunity-wp-theme

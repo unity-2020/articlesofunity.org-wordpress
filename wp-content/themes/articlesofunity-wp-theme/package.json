@@ -1,0 +1,74 @@
+{
+	"name": "twentytwenty",
+	"version": "1.0.0",
+	"description": "Default WP Theme",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Theme",
+		"TwentyTwenty"
+	],
+	"homepage": "https://github.com/wordpress/twentytwenty#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wordpress/twentytwenty.git"
+	},
+	"bugs": {
+		"url": "https://github.com/wordpress/twentytwenty/issues"
+	},
+	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^2.3.0",
+		"@wordpress/browserslist-config": "^2.6.0",
+		"@wordpress/scripts": "^5.0.0",
+		"autoprefixer": "^9.8.5",
+		"concurrently": "^5.2.0",
+		"cssnano": "^4.1.10",
+		"htmlnano": "^0.2.6",
+		"postcss-cli": "^7.1.1",
+		"postcss-import": "^12.0.1",
+		"postcss-nested": "^4.2.3",
+		"posthtml-cli": "^0.6.0",
+		"rtlcss": "^2.5.0",
+		"simple-autoreload-server": "^0.2.7",
+		"stylelint-a11y": "^1.2.3",
+		"tailwindcss": "^1.5.1"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config",
+		"Firefox >= 68"
+	],
+	"rtlcssConfig": {
+		"options": {
+			"autoRename": false,
+			"autoRenameStrict": false,
+			"blacklist": {},
+			"clean": true,
+			"greedy": false,
+			"processUrls": false,
+			"stringMap": []
+		},
+		"plugins": [],
+		"map": false
+	},
+	"scripts": {
+		"build": "npm run build:vendor-prefixes && npm run build:rtl && npm run css:build && npm run html:build",
+		"build:rtl": "concurrently \"npm run build:rtl-style\" \"npm run build:rtl-esb\" \"npm run build:rtl-esc\"",
+		"build:rtl-style": "rtlcss style.css style-rtl.css",
+		"build:rtl-esb": "rtlcss assets/css/editor-style-block.css assets/css/editor-style-block-rtl.css",
+		"build:rtl-esc": "rtlcss assets/css/editor-style-classic.css assets/css/editor-style-classic-rtl.css",
+		"build:vendor-prefixes": "concurrently \"npm run build:vendor-prefixes-style\" \"npm run build:vendor-prefixes-esb\" \"npm run build:vendor-prefixes-esc\"",
+		"build:vendor-prefixes-style": "postcss -r --no-map style.css",
+		"build:vendor-prefixes-esb": "postcss -r --no-map assets/css/editor-style-block.css ",
+		"build:vendor-prefixes-esc": "postcss -r --no-map assets/css/editor-style-classic.css",
+		"lint:css": "wp-scripts lint-style 'style.css' 'assets/**/*.css'",
+		"lint:js": "wp-scripts lint-js 'assets/**/*.js'",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"css:build": "postcss dev/src/styles.css -o dev/dist/tailwind.css --config dev/tailwind --env production",
+		"css:dev": "postcss dev/src/styles.css -o dev/src/tailwind-dev.css --config dev/tailwind --watch",
+		"html:build": "posthtml -c dev/posthtml.config.json",
+		"serve": "autoreload-server -c dev/src/autoreload.json -b",
+		"dev": "concurrently \"npm run css:dev\" \"npm run serve\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	}
+}

@@ -1,0 +1,23 @@
+/* These utils should all be classes. tw-reset may not always be necessary, but
+shown here as an example */
+
+@responsive {
+  .tw-reset .text-vertical,
+  .text-vertical {
+    writing-mode: vertical-rl;
+  }
+  .tw-reset .text-horizontal,
+  .text-horizontal {
+    writing-mode: horizontal-tb;
+  }
+
+  .tw-reset .flex-4\/7,
+  .flex-4\/7 {
+    flex: 0.571428571 1 0%;
+  }
+
+  .tw-reset .flex-1\/7,
+  .flex-1\/7 {
+    flex: 0.142857143 1 0%;
+  }
+}
