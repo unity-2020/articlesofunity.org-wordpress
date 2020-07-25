@@ -1,0 +1,23 @@
+# Ignore everything (this repo will sit alongside plenty of WP files)
+/*
+
+# Whitelist all files in this folder
+!.editorconfig
+!.gitignore
+!.gitattributes
+!README.md
+
+# Whitelist wp-content...
+!wp-content/
+
+# ...but ignore everything in it (same reason as above)
+wp-content/*
+
+# The pattern above will continue one more level deep. 
+!wp-content/plugins
+wp-content/plugins/*
+!wp-content/themes
+wp-content/themes/*
+
+# Finally, we will whitelist the exact directories we want. Then each specific
+# theme or plugin should maintain its own internal .gitignore file
