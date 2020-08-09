@@ -13,10 +13,13 @@ now we are simply tracking our inclusion of a few plugins and also the theme.
 
 Installing and running a WordPress site is beyond the scope of this readme, but
 that is what you will probably want to do to contribute in a meaningful way. I'd
-recommend the free tool called [Local](https://localwp.com).
+recommend the free tool called [Local](https://localwp.com), but there's also a
+docker-compose workflow.
 
-Once you have WP up and running you'll want to locate the root of your WP app.
-If you are using Local, that'd be something like
+## Development with [Local](https://localwp.com)
+
+Once you have Local installed and WP up and running, you'll want to locate the
+root of your WP app. When using Local, that'd be something like:
 
 ```
 <path to Local>/Local Sites/<your_unity_2020_name>/app/public
@@ -101,6 +104,30 @@ $ git branch -D temp
 ```
 
 This should leave all your other files in tact.
+
+## Development with [docker-compose](https://docs.docker.com/compose/)
+
+First, fork this repo into your own Github account.
+
+Then, clone your repo and fire up the stack with `docker-compose`:
+
+```
+$ git clone https://github.com/<your github username>/articlesofunity.org-wordpress.git
+$ cd articlesofunity.org-wordpress
+$ docker-compose up -d
+$ open http://localhost:8080
+```
+
+The first time you `docker-compose up`, two things will happen:
+1. WP will populate your checkout directory with an actual Wordpress install
+2. You'll see the WP first-time setup UI in your browser (this will also happen
+   anytime you delete the `mysql` volume)
+
+Tracking the upstream repo and the rest of the development workflow is beyond
+the scope of this document, but the
+[Syncing a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
+and [Github Flow](https://guides.github.com/introduction/flow/) pages should be
+helpful for the uninitiated!
 
 ## Development
 If you add a file or folder that is not housed inside a template or in a plugin

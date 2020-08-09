@@ -6,6 +6,7 @@
 !.gitignore
 !.gitattributes
 !README.md
+!docker-compose.yml
 
 # Whitelist wp-content...
 !wp-content/
