@@ -152,9 +152,9 @@ if ( ! class_exists( 'TwentyTwenty_SVG_Icons' ) ) {
 			'feed'      => array(
 				'feed',
 			),
-                        'forums'    => array(
-                                'discuss.articlesofunity.org',
-                        ),			
+			'forums'    => array(
+				'discuss.articlesofunity.org',
+			),
 			'google'    => array(
 				'g.page',
 			),
